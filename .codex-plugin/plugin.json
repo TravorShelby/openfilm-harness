@@ -1,0 +1,13 @@
+{
+  "name": "openfilm-harness",
+  "version": "0.2.0",
+  "description": "OpenFilm editor and agent collaboration bridge",
+  "license": "MIT",
+  "mcpServers": "./.mcp.json",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "OpenFilm Harness",
+    "shortDescription": "Edit video in your current agent chat",
+    "category": "Creativity"
+  }
+}

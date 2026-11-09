@@ -1,0 +1,30 @@
+{
+  "name": "openfilm-harness-bridge",
+  "version": "0.2.0",
+  "private": true,
+  "license": "MIT",
+  "engines": { "node": ">=22.18" },
+  "type": "module",
+  "description": "MCP bridge for controlling the OpenFilm editor from a Codex or MCP-compatible conversation.",
+  "author": "TravorShelby",
+  "homepage": "https://github.com/TravorShelby/openfilm-harness#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TravorShelby/openfilm-harness.git"
+  },
+  "bugs": { "url": "https://github.com/TravorShelby/openfilm-harness/issues" },
+  "keywords": ["openfilm", "mcp", "video-editing", "agent", "codex", "claude-code"],
+  "scripts": {
+    "test": "node --test --test-concurrency=1 --test-timeout=60000",
+    "configure": "node configure.mjs",
+    "check": "node --check server.mjs && node --check worker.mjs && node --check browser-bridge.js",
+    "pack:local": "npm pack --pack-destination dist"
+  },
+  "files": ["*.mjs", "!*.test.mjs", "browser-bridge.js", "*.json", "*.md", "LICENSE", "install.ps1", "skills", "docs", ".agents", ".codex-plugin", ".claude-plugin", ".mcp.json"],
+  "bundledDependencies": ["@modelcontextprotocol/sdk", "openfilm", "zod"],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "openfilm": "0.2.7",
+    "zod": "4.6.7"
+  }
+}

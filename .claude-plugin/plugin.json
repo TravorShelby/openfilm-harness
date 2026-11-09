@@ -1,0 +1,8 @@
+{
+  "name": "openfilm-harness",
+  "version": "0.2.0",
+  "description": "OpenFilm pure editor with MCP selection, timeline edits and rendering",
+  "license": "MIT",
+  "mcpServers": "./.mcp.json",
+  "skills": "./skills/"
+}

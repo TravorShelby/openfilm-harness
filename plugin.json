@@ -1,0 +1,18 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "openfilm-harness",
+  "version": "0.2.0",
+  "description": "Edit OpenFilm projects from your existing agent conversation, with selection context, revision checks and reversible edits.",
+  "license": "MIT",
+  "keywords": ["video", "openfilm", "mcp", "editor", "codex", "claude-code", "opencode"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "OpenFilm Harness",
+        "shortDescription": "Edit video in your current agent chat",
+        "longDescription": "Open OpenFilm Studio as a pure editor alongside your existing conversation. Read selection and playhead context, edit shared timelines with revision checks, inspect frames and render.",
+        "category": "Creativity"
+      }
+    }
+  }
+}

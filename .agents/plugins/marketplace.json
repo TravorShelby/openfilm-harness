@@ -1,0 +1,7 @@
+{
+  "name": "openfilm-harness-local",
+  "interface": { "displayName": "OpenFilm Harness Local" },
+  "plugins": [
+    { "name": "openfilm-harness", "source": { "source": "local", "path": "./" }, "policy": { "installation": "AVAILABLE" }, "category": "Creativity" }
+  ]
+}

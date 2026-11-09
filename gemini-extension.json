@@ -1,0 +1,11 @@
+{
+  "name": "openfilm-harness",
+  "version": "0.2.0",
+  "mcpServers": {
+    "openfilm-editor": {
+      "command": "node",
+      "args": ["${extensionPath}/server.mjs"],
+      "env": { "OPENFILM_HARNESS": "gemini" }
+    }
+  }
+}

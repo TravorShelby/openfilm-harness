@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenFilm Harness"
+  short_description: "Edit video with your current agent and OpenFilm Studio"
+  default_prompt: "Use $openfilm-codex to open my OpenFilm project and edit the selected clip in this conversation."

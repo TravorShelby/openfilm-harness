@@ -1,0 +1,5 @@
+{
+  "name": "openfilm-harness-local",
+  "owner": { "name": "OpenFilm Harness contributors" },
+  "plugins": [{ "name": "openfilm-harness", "source": "./", "description": "OpenFilm editor for your existing agent conversation" }]
+}
