@@ -49,9 +49,16 @@ test('real Studio: two MCP clients, selection/reference, commands, live edits, u
     await page.goto(opened.editorUrl);
     await page.getByLabel('Agent 编辑器连接').waitFor();
     await page.getByRole('status').filter({ hasText: '已连接' }).waitFor();
-    let context = await call(a, 'openfilm_get_context');
+    // Connection acknowledgement can precede Studio's first selection callback.
+    // Wait for the actual project context rather than assuming both arrive together.
+    let context;
+    for (let i = 0; i < 100; i++) {
+      context = await call(a, 'openfilm_get_context');
+      if (context.editor.online && context.editor.selection?.projectId === opened.binding.projectId) break;
+      await page.waitForTimeout(100);
+    }
     assert.equal(context.editor.online, true);
-    assert.equal(context.editor.selection.projectId, opened.binding.projectId);
+    assert.equal(context.editor.selection?.projectId, opened.binding.projectId);
     // Host commands exercise Studio's actual registered listener, then read its real selection callback.
     const command = await call(a, 'openfilm_editor_command', { command: { type: 'select-clip', id: 'shot', seek: true } });
     await page.waitForFunction(() => document.querySelector('[aria-label="Agent 编辑器连接"]')?.textContent.includes('已连接'));
